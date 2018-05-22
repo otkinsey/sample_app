@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | Rails app</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,3 +13,11 @@
     <%= yield %>
   </body>
 </html>
+
+ class String
+     def shuffle
+     self.split('')join.shuffle
+   end
+ end
+ "foobar".shuffle
+=> "borafo"

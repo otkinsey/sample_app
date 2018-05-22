@@ -1,5 +1,9 @@
 require 'test_helper'
 
+class ActiveSupport::TestCase
+  fixtures :all
+end
+
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   def setup

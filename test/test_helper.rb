@@ -6,8 +6,6 @@ require 'minitest/reporters'
 
 Minitest::Reporters.use!
 
-
-
 class ActiveSupport::TestCase
 
   fixtures :all

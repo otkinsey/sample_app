@@ -1,0 +1,20 @@
+p: = problem
+s: = solution
+
+U: okoa.kinsey@e2ycommerce.com
+P: komet1234
+
+ITEM - 1. "LOG_IN_AS?" FUNCTION NOT WORKING
+--------------------------------------------------------------------------------
+p: unable to login during integration testing; "log_in_as" helper function not working
+s: added login mechanism to "users_login_test" directly; not using helper function
+
+ITEM - 2. COOKIES NOT SET DURNG INTEGRATION TESTS
+--------------------------------------------------------------------------------
+p: cookies not being set during integration test; "log_in_as" helper function not working
+s:
+
+ITEM - 3. TERNARY EXPRESSION NOT WORKING IN SESSION CONTROLLER ("create" action)
+--------------------------------------------------------------------------------
+p: integration tests pass when "remember(user)" is called directly, but not with ternary
+s:

@@ -24,7 +24,7 @@ end
 class ActionDispatch::IntegrationTest
 
   def log_in_as(user, password: 'komet1234', remember_me: '1') #login mechanism is flawed here
-    post login_path, params: { session: { email: user.email, password: password, remember_me: remember_me } }
+      post login_path, params: { session: { email: @user.email, password: "password", remember_me:'1' } }
   end
   # Add more helper methods to be used by all tests here...
 end

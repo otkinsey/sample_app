@@ -4,6 +4,10 @@ s: = solution
 U: okoa.kinsey@e2ycommerce.com
 P: komet1234
 
+Heroku:
+u: otkinseyub@gmail.com 
+p:Komet!1234
+
 ITEM - 1. "LOG_IN_AS?" FUNCTION NOT WORKING
 --------------------------------------------------------------------------------
 p: unable to login during integration testing; "log_in_as" helper function not working

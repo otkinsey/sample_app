@@ -11,4 +11,11 @@ class ActiveSupport::TestCase
   fixtures :all
   include ApplicationHelper
   # Add more helper methods to be used by all tests here...
+  def logged_in?
+    !session[:user_id].nil?
+  end
+
+  def setup
+    @test_user = users(:okoa)
+  end
 end

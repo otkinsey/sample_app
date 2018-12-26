@@ -8,6 +8,11 @@
 #   name: MyString
 #   email: MyString
 okoa:
- name: okoa kinsey
- email: test@test.com
+ name: Okoa Toure Kinsey
+ email: otkinseyub@gmail.com
  password_digest: <%= User.digest('komet1') %>
+
+michael:
+ name: michael hartl
+ email: mhartl@gmail.com
+ password_digest: <%= User.digest('mhartl') %>

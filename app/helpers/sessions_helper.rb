@@ -22,23 +22,12 @@ module SessionsHelper
       end
     end
   end
-  # def current_user
-  #   if session[:user_id]
-  #     @current_user ||= User.find(id: session[:user_id])
-  #   end
-  # end
 
   def forget(user)
     user.forget
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
   end
-
-  # def log_out
-  #   forget(current_user)
-  #   session.delete(:user_id)
-  #   @current_user = nil
-  # end
 
   def log_out
     forget(current_user)

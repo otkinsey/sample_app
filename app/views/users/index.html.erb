@@ -1,0 +1,15 @@
+<%= provide(:title, 'Users')%>
+<div class="row">
+  <aside class="col-md-4">
+    <h1>Users List</h1>
+      <% @users.each do |user| %>
+        <section class="user_info">
+          <h1>
+            <%= gravatar_for user, size: 90 %>
+            <%= user.name %>
+          </h1>
+          email: <%= user.email %>
+        </section>
+      <% end %>
+  </aside>
+</div>

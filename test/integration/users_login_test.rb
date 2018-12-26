@@ -24,7 +24,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_template "users/show"
     assert_select "a[href=?]", login_path,   count: 0
     assert_select "a[href=?]", logout_path
-    puts "[user_login_test.rb: login with valid information followed by logout] - logout_path: #{users_path} \n\n"
+    # puts "[user_login_test.rb: login with valid information followed by logout] - logout_path: #{users_path} \n\n"
     assert_select "a[href=?]", users_path
     delete logout_path
     assert_not logged_in?
@@ -40,8 +40,9 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 
   test "login with remembering" do
     log_in_as(@user, remember_me: '1')
-    # puts "[user_login_test.rb: login with remembering] - remember_token: #{cookies['remember_token']} \n\n"
-    assert_not_empty cookies['remember_token']
+    puts "[user_login_test.rb: login with remembering] - remember_token: #{assigns(:user).remember_token} \n\n"
+    # assert_not_empty cookies['remember_token']
+    assert_not_empty assigns(:user).remember_token
   end
 
   test "login without remembering" do

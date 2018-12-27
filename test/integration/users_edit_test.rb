@@ -6,6 +6,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   end
 
   test 'unsuccessful edit' do
+    log_in_as(@user)
     get edit_user_path(@user)
     puts "[test/integration/users_edit_test.rb: unsuccessful edit] edit_user_path: #{edit_user_path(@user)} \n\n "
     assert_template 'users/edit'
@@ -14,10 +15,11 @@ class UsersEditTest < ActionDispatch::IntegrationTest
                                               password: "",
                                               password_confirmation: "" }}
     assert_template 'users/edit'
-    assert_select "div.alert", text: "the form contains 2 errors"
+    assert_select "div.alert", text: "the form contains  2 errors"
   end
 
   test 'test successful edit' do
+    log_in_as(@user)
     get edit_user_path(@user)
     assert_template 'users/edit'
     name = "Foo Bar"

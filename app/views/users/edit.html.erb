@@ -1,0 +1,20 @@
+<%= provide(:title, "Edit User")%>
+<%# <% if logged_in? %> %>
+<h1>Update Your Profile</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offest-3">
+      <%= render 'users/form.html.erb' %>
+     <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <a href="http://gravatar.com/emails" rel="noopener" target="_blank">change</a>
+    </div>`
+  </div>
+</div>
+<%# <% else %> %>
+<!-- <div class="row">
+  <div class="col-md-6 col-md-offset-3">
+      <h1>You must be logged in!</h1>
+      <a href="/login" class="btn btn-primary">login</a>
+  </div>
+</div> -->
+<%# <% end %> %>

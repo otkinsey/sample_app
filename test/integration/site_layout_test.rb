@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class SiteLayoutTest < ActionDispatch::IntegrationTest
+  def setup
+    @user = users(:okoa)
+  end
   test "layout links" do
     get root_path
     assert_template 'static_pages/home'
@@ -10,5 +13,16 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select 'a[href=?]', contact_path
     get contact_path
     assert_select "title", full_title("Contact")
+    get login_path
+    log_in_as(@user)
+    assert_response :redirect
+    follow_redirect!
+    assert_select 'a[href=?]', root_path, count:3
+    assert_select 'a', text: 'Account'
+    assert_select 'a', text: 'Logged In'
+    # assert_select 'a[href=?]', user_path(@user)
+    assert_select 'a[href=?]', edit_user_path(@user)
+    assert_select 'a[href=?]', users_path
+    assert_select 'a[href=?]', logout_path
   end
 end

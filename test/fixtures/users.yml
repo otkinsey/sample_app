@@ -8,14 +8,15 @@
 #   name: MyString
 #   email: MyString
 okoa:
- name: Okoa Toure Kinsey
- email: otkinseyub@gmail.com
- password_digest: <%= User.digest('komet1') %>
+ name: Okoa Kinsey
+ email: otkinseyub@test.com
+ password_digest: <%= User.digest('password') %>
 
 michael:
- name: michael hartl
- email: mhartl@gmail.com
- password_digest: <%= User.digest('mhartl') %>
+ name: Michael Hartl
+ email: mhartl@test.com
+ password_digest: <%= User.digest('password') %>
+ admin: true
 
 archer:
   name: Sterling Archer

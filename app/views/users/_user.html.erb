@@ -1,0 +1,16 @@
+<li class="user_link">
+  <div class="row">
+    <div class="col-md-1">
+      <%= gravatar_for user, size: 90 %>
+    </div>
+    <div class="col-md-11">
+      <a href="<%= user_path(user) %>"><%= user.name %></a><br>
+      <span>email: <%= user.email %></span>
+      <% if current_user.admin? && !current_user?(user) %>
+        <%= link_to "delete", user, method: :delete,
+                                    data: { confirm: "Are you sure?" } %>
+      <% end %>
+    </div>
+  </div>
+</li>
+<hr>

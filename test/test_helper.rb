@@ -21,8 +21,8 @@ class ActiveSupport::TestCase
 end
 
 class ActionDispatch::IntegrationTest
-  def log_in_as(user, password: 'komet1', remember_me: '1')
-    # puts "[test_helper.rb:] - email: #{user.email} password: #{password} \n\n"
+  def log_in_as(user, password: 'password', remember_me: '1')
+    # puts "[test_helper.rb: log_in_as] - email: #{user.email} password: #{password} \n\n"
     post login_path, params: { session: { email: user.email, password: password, remember_me: remember_me } }
   end
 end

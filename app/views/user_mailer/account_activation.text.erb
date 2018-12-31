@@ -1,0 +1,6 @@
+User#account_activation
+Hi <%= @user.name %>
+
+Welcome to the sample app! Click on the link below ot activate your account.
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>

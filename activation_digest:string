@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20181231141904_add_activate_to_users.rb

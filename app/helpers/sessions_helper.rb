@@ -21,7 +21,7 @@ module SessionsHelper
     elsif (user_id = cookies.signed[:user_id] )
       # raise
       user = User.find_by(id: user_id)
-      if user && user.authenticated?(cookies[:remember_token])
+      if user && user.authenticated?(:remember, cookies[:remember_token])
       # if user
         log_in user
         @current_user = user
@@ -50,7 +50,7 @@ module SessionsHelper
   end
 
   def redirect_back_or(default)
-    redirect_to(session[ :forwarding_url ] || default) 
+    redirect_to(session[ :forwarding_url ] || default)
     session.delete(:forwarding_url)
   end
 end

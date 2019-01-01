@@ -9,7 +9,7 @@
   <%= f.label :password %>
   <%= f.password_field :password, class: 'form-control' %>
 
-  <% if logged_in? %>
+  <% if !logged_in? %>
     <%= f.label :password_confirmation, "Confirmaton" %>
     <%= f.password_field :password_confirmation, class: 'form-control' %>
   <% end %>
